@@ -1,58 +1,86 @@
 # Dynamic Parking Pricing – Summer Analytics 2025
 
-Name: Shivam Kansal  
-Email: shivam427kansal@gmail.com  
-Program: Summer Analytics Capstone, 2025
+**Name:** Shivam Kansal  
+**Email:** shivam427kansal@gmail.com  
+**Program:** Summer Analytics Capstone, 2025
+
+---
 
 ## Project Overview
 
-This project focuses on building a dynamic pricing engine for urban parking lots. The goal is to simulate real-time pricing based on various features such as occupancy, queue length, traffic conditions, and vehicle types.
+This project focuses on building a dynamic pricing engine for urban parking lots. The idea is to simulate how parking prices can adjust in real-time using data like occupancy levels, traffic conditions, vehicle type, and queue length.
 
-Three models were created to observe different pricing strategies and simulate their behavior using streaming data.
+Three pricing models were developed and compared to observe different strategies for setting parking fees.
+
+---
 
 ## Tech Stack
 
 - Python (Pandas, NumPy)
-- Bokeh (for visualization)
-- Pathway (for real-time stream simulation)
-- Google Colab (execution)
-- GitHub (version control)
+- Google Colab (code execution)
+- Bokeh (for plotting price behavior)
+- GitHub (for version control)
+
+---
 
 ## Pricing Models
 
-### Model 1 – Linear Pricing
-Basic model where price increases linearly with occupancy rate.  
-Formula: `Price = Base + 2 × OccupancyRate`
+### 🔹 Model 1 – Linear Occupancy-Based Pricing  
+Simple model where the price increases linearly with how full the lot is.  
+Formula used: `Price = Base + α × OccupancyRate`
 
-### Model 2 – Demand-Based Pricing
-Pricing depends on multiple features like traffic, queue length, special day indicator, and vehicle type. A normalized demand score is used to adjust the price.
+### 🔹 Model 2 – Demand-Based Pricing  
+Takes multiple real-world features into account like:
+- Occupancy Rate  
+- Queue Length  
+- Traffic Conditions  
+- Special Days  
+- Vehicle Type  
+A combined demand score is normalized and used to adjust prices dynamically.
 
-### Model 3 – Competitive Pricing
-Price is adjusted based on nearby parking lots. If nearby lots are cheaper or expensive, prices are adjusted accordingly to stay competitive.
+### 🔹 Model 3 – Competitive-Based Pricing  
+This model checks nearby parking lots (within 500m) and adjusts prices based on their rates.  
+If neighbors are cheaper and queues are long, prices are reduced.  
+If neighbors are expensive, prices may be increased slightly.
 
-## Streaming Simulation
+---
 
-Pathway was used to simulate the models in a real-time environment.  
-The system outputs updated prices for all parking lots across time intervals, simulating real-world conditions.
+## Visualization
+
+A comparison of all three models was plotted using Bokeh.  
+The plot shows how pricing changes throughout the day for a selected lot.
+
+---
 
 ## Repository Contents
 
-- `Dynamic_Pricing_Urban_Parking_SummerAnalytics2025.ipynb` – main code notebook
-- `pathway_output.jsonl` – output from streaming Model 1
-- `pathway_output_model2.jsonl` – output from streaming Model 2
+- `Dynamic_Pricing_Urban_Parking_SummerAnalytics2025.ipynb` – main notebook with all logic
+- `Architecture.png` – block diagram showing model flow
+- `model_comparison_plot.png` – Bokeh plot comparing all 3 models
+- `stream_output_model2.png` – sample simulated print output for Model 2
 - `README.md` – this file
+
+---
 
 ## How to Run
 
 1. Open the notebook in Google Colab  
-2. Run all the cells in order  
-3. Bokeh plots will display price changes  
-4. Streaming outputs will appear in the console and be saved as `.jsonl` files
+2. Upload the dataset file when prompted  
+3. Run all cells in order  
+4. Final output includes:
+   - Price columns from all three models  
+   - Bokeh plot for comparison  
+   - Optional simulated streaming printout
+
+---
 
 ## Conclusion
 
-This project helped build an understanding of demand-based pricing systems using real-time data.  
-It involved data preprocessing, feature engineering, model building, and live simulation using Pathway.  
-The visualizations and outputs provided insights into how prices change with different real-world factors.
+This project helped explore how data-driven pricing strategies can be built and compared using real urban parking data.  
+It involved:
+- Feature engineering  
+- Multiple pricing logics  
+- Comparison through plots  
+- Basic simulation for final output
 
-Thank you for reviewing this submission.
+Thank you for reviewing this project.
