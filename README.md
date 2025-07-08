@@ -1,7 +1,7 @@
 # Dynamic Parking Pricing – Summer Analytics 2025
 
 Name: Shivam Kansal  
-Email: shivam427kansal@gamil.com  
+Email: shivam427kansal@gmail.com  
 Program: Summer Analytics Capstone, 2025
 
 ## Project Overview
